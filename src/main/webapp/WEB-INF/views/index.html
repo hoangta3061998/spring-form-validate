@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register </title>
+</head>
+<body>
+<h3>Register</h3>
+<form th:action="@{/validate}" th:object="${user}" method="post">
+    <p>FirstName:<input type="text" th:field="*{firstName}"></p><a th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></a>
+    <p>LastName:<input type="text" th:field="*{lastName}"></p><a th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></a>
+    <p>Age:<input type="text" th:field="*{age}"></p><a th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></a>
+    <p>Email:<input type="text" th:field="*{email}"></p><a th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></a>
+    <input type="submit" value="Regist">
+</form>
+</body>
+</html>
